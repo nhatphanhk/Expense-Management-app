@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context=".SavingsActivity">
+
+    <!-- Nội dung chính -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Toolbar với nút back -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_back"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Savings"
+                android:textSize="24sp"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <!-- Phần Savings với vòng tròn -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/current_savings_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Savings"
+                android:textColor="#7D879C"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <RelativeLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp">
+
+                <ImageView
+                    android:id="@+id/savings_circle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/circle_background" />
+
+                <TextView
+                    android:id="@+id/savings_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$800"
+                    android:textSize="32sp"
+                    android:textColor="@android:color/white"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- Phần Goal cho tháng hiện tại -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_box"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:id="@+id/monthly_goal_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="July 2024"
+                android:textColor="@android:color/black"
+                android:drawableLeft="@drawable/ic_calendar"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/goal_for_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Goal for this Month"
+                android:textColor="#7D879C"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$200"
+                    android:textSize="18sp"
+                    android:textColor="#0033FF" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:max="500"
+                    android:progress="200"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressTint="#0033FF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$500"
+                    android:textSize="18sp"
+                    android:textColor="#7D879C" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Phần Your Goals -->
+        <TextView
+            android:id="@+id/your_goals_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Goals"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_box"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/goal_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_bike" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/goal_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Bike"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/goal_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$300"
+                    android:textColor="#7D879C"
+                    android:textSize="14sp" />
+
+                <ProgressBar
+                    android:id="@+id/goal_progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:max="600"
+                    android:progress="300"
+                    android:progressTint="#0033FF" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/goal_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$600"
+                android:textColor="#7D879C"
+                android:textSize="16sp" />
+
+            <!-- Thêm dấu ba chấm -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Include Bottom Navigation từ layout riêng -->
+    <include
+        layout="@layout/bottom_nav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
